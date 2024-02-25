@@ -12,3 +12,51 @@
 		@apply box-border;
 	}
 }
+
+/* Root Layout */
+@layer components {
+	.root-layout {
+		@apply border-red-600 border-solid border-4
+			w-screen h-screen
+			min-w-[400px]
+			min-h-[600px]
+			flex flex-col justify-center items-center;
+	}
+
+	.root-children {
+		@apply /* border-green-300 border-solid border-4 */
+		w-full h-full
+		flex flex-col justify-center items-center;
+	}
+}
+
+/* Home Layout */
+@layer components {
+	.home-container {
+		@apply border-blue-500 border-solid border-4
+			w-full h-full
+			flex flex-col justify-center items-center;
+	}
+}
+
+/* NavBar */
+@layer components {
+	.nav-container {
+		@apply /* border-blue-500 border-solid border-4 */
+		w-full h-[70px] 
+		p-2
+		flex flex-row justify-between items-center;
+	}
+
+	.nav-logo {
+		@apply border-red-600 border-solid border-2
+		w-[100px] h-full
+		flex justify-center items-center;
+	}
+
+	.nav-menu-icon {
+		@apply border-yellow-400 border-solid border-2
+		w-[60px] h-[40px]
+		flex justify-center items-center;
+	}
+}
