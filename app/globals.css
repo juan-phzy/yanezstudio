@@ -11,6 +11,10 @@
 	* {
 		@apply box-border;
 	}
+	body {
+		@apply bg-gray-700
+			text-white;
+	}
 }
 
 /* Root Layout */
@@ -43,20 +47,34 @@
 @layer components {
 	.nav-container {
 		@apply /* border-blue-500 border-solid border-4 */
+		fixed
+		bg-black/30
+		top-0
 		w-full h-[70px] 
 		p-2
 		flex flex-row justify-between items-center;
+		backdrop-filter: blur(15px);
 	}
 
 	.nav-logo {
 		@apply border-red-600 border-solid border-2
-		w-[100px] h-full
+		relative
+		w-[170px] h-[50px]
 		flex justify-center items-center;
 	}
 
-	.nav-menu-icon {
+	.nav-icon {
 		@apply border-yellow-400 border-solid border-2
-		w-[60px] h-[40px]
-		flex justify-center items-center;
+		w-[50px] h-[50px]
+		relative
+		p-2
+		flex flex-col justify-center items-start
+		gap-[4px];
+	}
+	.nav-icon-bar {
+		@apply bg-white
+		h-[4px]
+		rounded-tl-xl
+		rounded-br-xl;
 	}
 }
