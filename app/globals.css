@@ -20,7 +20,7 @@
 /* Root Layout */
 @layer components {
 	.root-layout {
-		@apply border-red-600 border-solid border-4
+		@apply /* border-red-600 border-solid border-4 */
 			w-screen h-screen
 			min-w-[400px]
 			min-h-[600px]
@@ -38,8 +38,22 @@
 @layer components {
 	.home-container {
 		@apply border-blue-500 border-solid border-4
+			mt-[70px]
 			w-full h-full
 			flex flex-col justify-center items-center;
+	}
+
+	.hero-container {
+		@apply border-orange-400 border-solid border-2
+			w-[90%] h-full
+			flex flex-col justify-center items-start;
+	}
+
+	.hero-text {
+		@apply border-red-400 border-solid border-2
+			flex flex-col justify-center items-start
+			w-full h-fit
+			text-4xl;
 	}
 }
 
@@ -48,10 +62,11 @@
 	.nav-container {
 		@apply /* border-blue-500 border-solid border-4 */
 		fixed
-		bg-black/30
+		bg-black/40
 		top-0
 		w-full h-[70px] 
 		p-2
+		z-50
 		flex flex-row justify-between items-center;
 		backdrop-filter: blur(15px);
 	}
@@ -76,5 +91,55 @@
 		h-[4px]
 		rounded-tl-xl
 		rounded-br-xl;
+	}
+
+	/* Nav DropDown Styles */
+	.nav-dd-closed {
+		@apply border-solid border-red-700 border-2
+		flex flex-col gap-2 justify-center items-center
+		pointer-events-none
+		fixed
+		top-[-60px]
+		w-full h-fit
+		z-10
+		opacity-0;
+	}
+
+	.nav-dd-open {
+		@apply /* border-solid border-red-700 border-2 */
+			flex flex-col gap-2 justify-center items-center
+			bg-black/40
+			fixed
+			top-[70px]
+			w-full h-fit
+			z-10
+			p-3
+			rounded-b-md;
+		backdrop-filter: blur(15px);
+	}
+
+	.nav-dd-choice {
+		@apply border-b-[1px] border-white border-solid
+			flex justify-start items-center
+			bg-transparent
+			w-full h-fit
+			py-1
+			pl-0;
+	}
+}
+
+/* Buttons */
+@layer components {
+	.btn-trns {
+		@apply border-white/50 border-solid border-2
+			flex justify-center items-center
+			gap-1
+			bg-gray-800/80
+			rounded-lg
+			p-3
+			transition-all
+			duration-500
+			hover:gap-4
+			hover:bg-gray-900/90;
 	}
 }
