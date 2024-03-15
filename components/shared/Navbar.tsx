@@ -1,10 +1,19 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
+const navLinks = [
+	{ label: "Services", link: "/services" },
+	{ label: "Portfolio", link: "/portfolio" },
+	{ label: "About", link: "/about" },
+	{ label: "Contact", link: "/contact" },
+];
 
 const Navbar = () => {
 	const [menuOpen, setMenuOpen] = useState(false);
+	const pathname = usePathname();
 
 	return (
 		<>
@@ -42,10 +51,20 @@ const Navbar = () => {
 					!menuOpen ? "nav-dd-closed" : "nav-dd-open"
 				} transition-all duration-300`}
 			>
-				<div className="nav-dd-choice">blah</div>
-				<div className="nav-dd-choice">blah</div>
-				<div className="nav-dd-choice">blah</div>
-				<div className="nav-dd-choice">blah</div>
+				{navLinks.map((linkInfo) => {
+					const isActive = pathname === "/" + linkInfo.label.toLowerCase();
+					return (
+						<Link
+							key={linkInfo.label}
+							href={linkInfo.link}
+							className={`nav-dd-choice ${
+								isActive && `text-white border-white`
+							}`}
+						>
+							{linkInfo.label}
+						</Link>
+					);
+				})}
 			</section>
 		</>
 	);
