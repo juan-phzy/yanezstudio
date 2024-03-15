@@ -51,7 +51,7 @@
 	.hero-container {
 		@apply border-orange-400 border-solid border-4
 			flex flex-col justify-center items-start
-			w-full h-screen min-h-screen
+			w-full h-screen min-h-[670px]
 			relative
 			p-5
 			gap-2;
@@ -70,7 +70,7 @@
 	.home-02 {
 		@apply border-solid border-4 border-red-600
 			flex flex-col justify-center items-center
-			w-full h-screen min-h-screen
+			w-full h-screen min-h-[670px]
 			bg-gray-500
 			relative
 			gap-3;
